@@ -1,30 +1,30 @@
 ST Edge AI Core v2.0.0-20049
-Created date          : 2025-04-11 20:58:52
-Parameters            : generate --target stm32f4 --name network -m D:/ECG_Heartbeat_Classification/models/train_mitbih_cnn.tflite --compression none --verbosity 1 --workspace C:/Users/OS/AppData/Local/Temp/mxAI_workspace419935188630017032632830423243073 --output C:/Users/OS/.stm32cubemx/network_output
+Created date          : 2025-04-12 15:23:40
+Parameters            : generate --target stm32f4 --name network -m D:/ECG_Heartbeat_Classification/models/train_mitbih_cnn.tflite --compression none --verbosity 1 --workspace C:/Users/OS/AppData/Local/Temp/mxAI_workspace28162329555009512813717968032099 --output C:/Users/OS/.stm32cubemx/network_output
 
 Exec/report summary (generate)
---------------------------------------------------------------------------------------------------------
-model file         :   D:\ECG_Heartbeat_Classification\models\train_mitbih_cnn.tflite                   
-type               :   tflite                                                                           
-c_name             :   network                                                                          
-compression        :   none                                                                             
-options            :   allocate-inputs, allocate-outputs                                                
-optimization       :   balanced                                                                         
-target/series      :   stm32f4                                                                          
-workspace dir      :   C:\Users\OS\AppData\Local\Temp\mxAI_workspace419935188630017032632830423243073   
-output dir         :   C:\Users\OS\.stm32cubemx\network_output                                          
-model_fmt          :   float                                                                            
-model_name         :   train_mitbih_cnn                                                                 
-model_hash         :   0x614099b9ce971b3f0603bb434e3eabca                                               
-params #           :   254,641 items (994.69 KiB)                                                       
---------------------------------------------------------------------------------------------------------
-input 1/1          :   'serving_default_input_30', f32(1x187x1), 748 Bytes, activations                 
-output 1/1         :   'nl_37', f32(1x1), 4 Bytes, activations                                          
-macc               :   4,299,099                                                                        
-weights (ro)       :   1,018,564 B (994.69 KiB) (1 segment)                                             
-activations (rw)   :   35,840 B (35.00 KiB) (1 segment) *                                               
-ram (total)        :   35,840 B (35.00 KiB) = 35,840 + 0 + 0                                            
---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+model file         :   D:\ECG_Heartbeat_Classification\models\train_mitbih_cnn.tflite                  
+type               :   tflite                                                                          
+c_name             :   network                                                                         
+compression        :   none                                                                            
+options            :   allocate-inputs, allocate-outputs                                               
+optimization       :   balanced                                                                        
+target/series      :   stm32f4                                                                         
+workspace dir      :   C:\Users\OS\AppData\Local\Temp\mxAI_workspace28162329555009512813717968032099   
+output dir         :   C:\Users\OS\.stm32cubemx\network_output                                         
+model_fmt          :   float                                                                           
+model_name         :   train_mitbih_cnn                                                                
+model_hash         :   0x614099b9ce971b3f0603bb434e3eabca                                              
+params #           :   254,641 items (994.69 KiB)                                                      
+-------------------------------------------------------------------------------------------------------
+input 1/1          :   'serving_default_input_30', f32(1x187x1), 748 Bytes, activations                
+output 1/1         :   'nl_37', f32(1x1), 4 Bytes, activations                                         
+macc               :   4,299,099                                                                       
+weights (ro)       :   1,018,564 B (994.69 KiB) (1 segment)                                            
+activations (rw)   :   35,840 B (35.00 KiB) (1 segment) *                                              
+ram (total)        :   35,840 B (35.00 KiB) = 35,840 + 0 + 0                                           
+-------------------------------------------------------------------------------------------------------
 (*) 'input'/'output' buffers can be used from the activations buffer
 
 Model name - train_mitbih_cnn
