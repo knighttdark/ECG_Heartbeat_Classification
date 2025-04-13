@@ -23,7 +23,14 @@
 /* USER CODE BEGIN Includes */
 #include "network.h"
 #include "network_data.h"
-#include "stdio.h"
+#include "arm_math.h"
+#include "arm_const_structs.h"
+/* USER CODE BEGIN PV */
+
+/* USER CODE END PV */
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,7 +40,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define FFT_SIZE 64
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -42,9 +49,14 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+q15_t inputSignal[FFT_SIZE];
+q15_t complexSpectrum[FFT_SIZE*2];
+q15_t realSpectrum[FFT_SIZE];
+
 ADC_HandleTypeDef hadc1;
 
 /* USER CODE BEGIN PV */
+
 static ai_handle network = AI_HANDLE_NULL;
 AI_ALIGNED(32) static ai_u8 activations[AI_NETWORK_DATA_ACTIVATIONS_SIZE];
 AI_ALIGNED(32) static ai_i8 random_input[AI_NETWORK_IN_1_SIZE];
@@ -115,19 +127,39 @@ int main(void)
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   //AI_Init();
+  uint8_t freqBin=1;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  /*
 	  HAL_ADC_Start(&hadc1);
 	  HAL_ADC_PollForConversion(&hadc1, 10);
 	  ecg_raw = HAL_ADC_GetValue(&hadc1);
 	  printf("ECG raw value: %d\r\n", ecg_raw);
 	  float ecg_norm = ecg_raw / 4095.0f;
-
 	  HAL_Delay(1000);
+	   */
+	  for (int i = 0; i < FFT_SIZE; i++)
+	  {
+	      inputSignal[i] = round(32767 * sin(2.0 * M_PI * freqBin * i / FFT_SIZE));
+
+	      complexSpectrum[i * 2 + 0] = inputSignal[i];
+	      complexSpectrum[i * 2 + 1] = 0;  // keep it zero for now
+	  }
+
+	  // generate sine for next frequency bin in next iteration
+	  freqBin++;
+	  if (freqBin >= FFT_SIZE / 2) freqBin = 1;
+
+	  // FFT:
+	  arm_cfft_q15(&arm_cfft_sR_q15_len64, &complexSpectrum[0], 0, 1);
+	  // Converting complex spectrum to amplitudes
+	  arm_cmplx_mag_q15(&complexSpectrum[0], &realSpectrum[0], FFT_SIZE);
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

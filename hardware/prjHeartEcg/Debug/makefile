@@ -11,10 +11,6 @@ RM := rm -rf
 -include sources.mk
 -include X-CUBE-AI/App/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
--include DSP/Source/FilteringFunctions/subdir.mk
--include DSP/Source/FastMathFunctions/subdir.mk
--include DSP/Source/CommonTables/subdir.mk
--include DSP/Source/BasicMathFunctions/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
@@ -66,7 +62,7 @@ main-build: prjHeartEcg.elf secondary-outputs
 
 # Tool invocations
 prjHeartEcg.elf prjHeartEcg.map: $(OBJS) $(USER_OBJS) D:\ECG_Heartbeat_Classification\hardware\prjHeartEcg\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "prjHeartEcg.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\ECG_Heartbeat_Classification\hardware\prjHeartEcg\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="prjHeartEcg.map" -Wl,--gc-sections -static -L../Middlewares/ST/AI/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "prjHeartEcg.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\ECG_Heartbeat_Classification\hardware\prjHeartEcg\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="prjHeartEcg.map" -Wl,--gc-sections -static -L"D:\ECG_Heartbeat_Classification\hardware\prjHeartEcg\Drivers\CMSIS\Lib\GCC" -L../Middlewares/ST/AI/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

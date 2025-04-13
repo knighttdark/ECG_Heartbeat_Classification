@@ -19,3 +19,69 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2025-04-12 15:41:50.133
 !MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 168000000; div: 84
+!SESSION 2025-04-12 16:58:32.845 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-12 16:59:54.331
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-04-12 16:59:54.343
+!MESSAGE Log4j2 initialized with config file D:\ECG_Heartbeat_Classification\hardware\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-12 17:01:01.632
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-12 20:18:08.683
+!MESSAGE Indexed 'prjHeartEcg' (239 sources, 239 headers) in 7.63 sec: 28,845 declarations; 206,937 references; 3 unresolved inclusions; 141 syntax errors; 423 unresolved names (0.18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-12 20:58:44.072
+!MESSAGE Indexed 'prjHeartEcg' (26 sources, 167 headers) in 2.85 sec: 19,791 declarations; 56,801 references; 1 unresolved inclusions; 91 syntax errors; 238 unresolved names (0.31%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-12 21:01:54.583
+!MESSAGE Indexed 'prjHeartEcg' (26 sources, 167 headers) in 3.77 sec: 19,791 declarations; 56,801 references; 1 unresolved inclusions; 91 syntax errors; 238 unresolved names (0.31%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-12 21:03:08.467
+!MESSAGE Indexed 'prjHeartEcg' (26 sources, 167 headers) in 2.7 sec: 19,791 declarations; 56,801 references; 1 unresolved inclusions; 91 syntax errors; 238 unresolved names (0.31%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-12 21:03:27.665
+!MESSAGE Indexed 'prjHeartEcg' (26 sources, 167 headers) in 2.48 sec: 19,791 declarations; 56,801 references; 1 unresolved inclusions; 91 syntax errors; 238 unresolved names (0.31%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-12 21:19:19.960
+!MESSAGE Indexed 'prjHeartEcg' (26 sources, 167 headers) in 2.66 sec: 19,791 declarations; 56,801 references; 1 unresolved inclusions; 91 syntax errors; 238 unresolved names (0.31%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-12 21:21:33.970
+!MESSAGE Indexed 'prjHeartEcg' (26 sources, 168 headers) in 2.43 sec: 21,848 declarations; 59,498 references; 1 unresolved inclusions; 91 syntax errors; 238 unresolved names (0.29%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2025-04-12 21:22:00.952
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 168000000; div: 84
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 4 2025-04-12 21:22:23.602
+!MESSAGE NullPointerException while trying to calculated source lookup path. This can be ignored if it occurs while terminating a debug session. See Bug 500988.
+!STACK 0
+java.lang.NullPointerException: Cannot read the array length because "containers" is null
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.collectSubstitutionsPaths(GdbSourceLookupDirector.java:102)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.collectSubstitutionsPaths(GdbSourceLookupDirector.java:146)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.getSubstitutionsPaths(GdbSourceLookupDirector.java:72)
+	at org.eclipse.cdt.dsf.gdb.service.GDBSourceLookup.getSubstitutionsPaths(GDBSourceLookup.java:124)
+	at org.eclipse.cdt.dsf.gdb.service.GDBSourceLookup.sourceContainersChanged(GDBSourceLookup.java:139)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupParticipant.sourceContainersChangedOnDispatchThread(GdbSourceLookupParticipant.java:120)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupParticipant$1.run(GdbSourceLookupParticipant.java:85)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2025-04-12 21:31:16.299
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 168000000; div: 84
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2025-04-12 21:38:34.665
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 168000000; div: 84
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2025-04-12 21:45:01.623
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 168000000; div: 84
